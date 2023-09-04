@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Level.gd" type="Script" id=4]
-[ext_resource path="res://trebuc.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/trebuc.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/dood2.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -131,6 +132,10 @@ theme = SubResource( 8 )
 popup_exclusive = true
 window_title = "Score Limit Reached"
 dialog_text = "You Lose!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -15.0
 
 [connection signal="body_entered" from="left" to="." method="_on_left_body_entered"]
 [connection signal="body_entered" from="right" to="." method="_on_right_body_entered"]

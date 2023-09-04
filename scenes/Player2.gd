@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(int) var SPEED = 490
+export(int) var SPEED = 630
 var ball
 
 func _ready():
